@@ -102,64 +102,6 @@ def get_tokens(INFLUENCER_NAME,TWEETS_SINCE,LIMIT_TWEETS):
 
     return tokens_influencer
 
-'''
-    # ----------------------------
-    # Get tokens addresses
-    # ----------------------------
-    # Note: From here the token address are used and then the excel files can be downloaded manually
-
-    # api_key = 'ee1fba7d-e6ba-4d59-847f-29d45165abb0'
-    cmc = coinmarketcapapi.CoinMarketCapAPI(api_key)
-
-    data_id_map = cmc.cryptocurrency_map()
-
-    name = []
-    symbol = []
-    chain = []
-    address = []
-    status = []
-    for data in data_id_map.data:
-        symbol_token = data['symbol']
-        if symbol_token in tokens_influencer:
-            name.append(data['name'])
-            symbol.append(data['symbol'])
-            try:
-                chain.append(data['platform']['name'])
-                address.append(data['platform']['token_address'])
-                status.append('chain found')
-            except:
-                chain.append(data['name'])
-                address.append(data['slug'])
-                status.append('chain not found')
-
-    df_token_list = pd.DataFrame({'name':name,'symbol':symbol,'chain':chain,'token_address':address,'status':status})
-
-    df_eth = df_token_list[df_token_list['chain']=='Ethereum']
-    tokens_eth = df_eth.symbol.unique()
-
-    df_bnb = df_token_list[df_token_list['chain']=='BNB Smart Chain (BEP20)']
-    tokens_bnb = df_bnb.symbol.unique()
-
-    tokens = df_token_list.symbol.unique()
-
-    print('TOTAL tokens Ethereum:')
-    print(tokens_eth)
-
-    print('TOTAL tokens Binance:')
-    print(tokens_bnb)
-    
-
-    '''
-    # save token list
-    # file_name = 'tokens_' + INFLUENCER_NAME + '.xlsx'
-    # path = rf'C:\Users\marianota\Projects\TOKENS_ANALYSIS\\'
-    # path = rf'C:\Users\{os.getlogin()}\Downloads\\'
-    # file_path = path + file_name
-    # writer = pd.ExcelWriter(file_path,engine='xlsxwriter')
-    # df_token_list.to_excel(writer, sheet_name='Tokens', index=False)
-    # writer.save()
-
-
 
 # -----------------------------
 # Build Streamlit dashboard
