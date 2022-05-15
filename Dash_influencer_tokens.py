@@ -8,7 +8,7 @@ import snscrape.modules.twitter as sntwitter
 import pandas as pd
 import glob
 import os
-import coinmarketcapapi
+# import coinmarketcapapi
 import streamlit as st
 
 pd.set_option('display.max_columns',6)
@@ -98,13 +98,13 @@ def get_tokens(INFLUENCER_NAME,TWEETS_SINCE,LIMIT_TWEETS):
 
     print('Total tokens tweet by influencer ' + INFLUENCER_NAME + ': ' + str(len(tokens_influencer)))
 
-
+'''
     # ----------------------------
     # Get tokens addresses
     # ----------------------------
     # Note: From here the token address are used and then the excel files can be downloaded manually
 
-    api_key = 'ee1fba7d-e6ba-4d59-847f-29d45165abb0'
+    # api_key = 'ee1fba7d-e6ba-4d59-847f-29d45165abb0'
     cmc = coinmarketcapapi.CoinMarketCapAPI(api_key)
 
     data_id_map = cmc.cryptocurrency_map()
@@ -143,6 +143,8 @@ def get_tokens(INFLUENCER_NAME,TWEETS_SINCE,LIMIT_TWEETS):
 
     print('TOTAL tokens Binance:')
     print(tokens_bnb)
+    
+
 
     # save token list
     file_name = 'tokens_' + INFLUENCER_NAME + '.xlsx'
@@ -154,8 +156,10 @@ def get_tokens(INFLUENCER_NAME,TWEETS_SINCE,LIMIT_TWEETS):
     writer.save()
 
     print('Token load completed')
+    
+'''
 
-    return tokens
+    return tokens_influencer
 
 # -----------------------------
 # Build Streamlit dashboard
