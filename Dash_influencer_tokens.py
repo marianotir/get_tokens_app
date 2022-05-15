@@ -98,6 +98,10 @@ def get_tokens(INFLUENCER_NAME,TWEETS_SINCE,LIMIT_TWEETS):
 
     print('Total tokens tweet by influencer ' + INFLUENCER_NAME + ': ' + str(len(tokens_influencer)))
 
+    print('Token load completed')
+
+    return tokens_influencer
+
 '''
     # ----------------------------
     # Get tokens addresses
@@ -145,21 +149,17 @@ def get_tokens(INFLUENCER_NAME,TWEETS_SINCE,LIMIT_TWEETS):
     print(tokens_bnb)
     
 
-
+    '''
     # save token list
-    file_name = 'tokens_' + INFLUENCER_NAME + '.xlsx'
+    # file_name = 'tokens_' + INFLUENCER_NAME + '.xlsx'
     # path = rf'C:\Users\marianota\Projects\TOKENS_ANALYSIS\\'
-    path = rf'C:\Users\{os.getlogin()}\Downloads\\'
-    file_path = path + file_name
-    writer = pd.ExcelWriter(file_path,engine='xlsxwriter')
-    df_token_list.to_excel(writer, sheet_name='Tokens', index=False)
-    writer.save()
+    # path = rf'C:\Users\{os.getlogin()}\Downloads\\'
+    # file_path = path + file_name
+    # writer = pd.ExcelWriter(file_path,engine='xlsxwriter')
+    # df_token_list.to_excel(writer, sheet_name='Tokens', index=False)
+    # writer.save()
 
-    print('Token load completed')
-    
-'''
 
-    return tokens_influencer
 
 # -----------------------------
 # Build Streamlit dashboard
