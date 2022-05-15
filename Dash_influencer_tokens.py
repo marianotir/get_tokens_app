@@ -18,9 +18,9 @@ pd.set_option('display.max_columns',6)
 # Define Global Variables
 # ----------------------------
 
-# INFLUENCER_NAME = 'Bullrun_Gravano'
+INFLUENCER_NAME = 'Bullrun_Gravano'
 TWEETS_SINCE = '2021-01-01'
-LIMIT_TWEETS = 100
+LIMIT_TWEETS = 1000
 
 
 # ----------------------------
